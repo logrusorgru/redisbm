@@ -9,6 +9,21 @@ Compare Redis HSET/HGET and SET/GET
 * redis ruby gem
 * hiredis ruby gem
 
+### Edit
+
+By default db connection options is
+
+```ruby
+$r = Redis.new "/tmp/redis.sock", db: 10, driver: :hiredis
+```
+
+You may to use default connection options (no need for 'hiredis' driver)
+
+```ruby
+$r = Redis.new
+```
+
+
 ### Usage
 
 ```bash
