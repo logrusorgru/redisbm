@@ -50,6 +50,8 @@ $ ruby redisbm.rb --help
 		number of hashes ( default: 10000 )
 	--fields
 		number of each hash fields ( default: 10 )
+	--length
+		length of value ( default: 7 )
 
 ##### Exampes
 

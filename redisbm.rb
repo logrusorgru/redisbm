@@ -37,12 +37,16 @@ OptionParser.new do |opts|
     options[:path] = path
   end
 
-  opts.on("-c", "--count=COUNT", Array, "number of hashes, 10 000 by default (may it be an Array)") do |count|
+  opts.on("-c", "--count=COUNT", Array, "number of hashes, 10 000 by default (it may be an Array)") do |count|
     options[:count] = count
   end
 
-  opts.on("-f", "--fields=FIELDS", Array, "number of hash fields, 10 by default (may it be an Array)") do |fields|
+  opts.on("-f", "--fields=FIELDS", Array, "number of hash fields, 10 by default (it may be an Array)") do |fields|
     options[:fields] = fields
+  end
+
+  opts.on("-l", "--length=LENGTH", Integer, "length of value, 7 by default") do |length|
+    options[:length] = length
   end
 
   opts.on("--prefix=PREFIX", "prefix to protect from overwriting existing values") do |prefix|
@@ -88,11 +92,14 @@ end
 count = options[:count].nil? ? [10_000] : options[:count]
 fields = options[:fields].nil? ? [10] : options[:fields]
 
+# set value length
+
+$length = options[:length] || 7
 
 # generate random string
 
 def rnd_data
-	('a'..'z').to_a.shuffle[0..7].join
+	('a'..'z').to_a.shuffle[0..$length].join
 end
 
 # hash name with prefix
@@ -123,6 +130,7 @@ begin
 		puts "\tHashes: #{count[i]}"
 		fld = fields[i].nil? ? 10 : fields[i].to_i
 		puts "\tFields: #{fld}"
+		puts "\tLength: #{$length}"
 	
 		# generate k-v hash
 	
