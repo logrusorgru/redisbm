@@ -56,11 +56,11 @@ $ ruby redisbm.rb --help
 ##### Exampes
 
 ```bash
-ruby redisbm.rb -s -n10 --count=1000,10000,20000,40000,80000,160000 -f100
+$ ruby redisbm.rb -s -n10 --count=1000,10000,20000,40000,80000,160000 -f100
 ```
 
 ```bash
-ruby redisbm.rb -s -n10 -c1000,50000,100000 -f100,20,1
+$ ruby redisbm.rb -s -n10 -c1000,50000,100000 -f100,20,1
 ```
 
 ### Legal
