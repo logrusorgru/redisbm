@@ -1,7 +1,8 @@
 redisbm
 =======
 
-Compare Redis HSET/HGET and SET/GET
+Compare Redis operations: HSET/HGET vs SET/GET.
+It's small benchmark for ruby + redis.
 
 ### Require
 
